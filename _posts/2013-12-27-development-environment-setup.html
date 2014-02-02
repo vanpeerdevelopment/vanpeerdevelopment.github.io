@@ -1,0 +1,134 @@
+---
+layout:  post
+title:   Development Environment Setup
+date:    2013-12-27 00:52:00
+tags:    [Development Environment Setup, Eclipse, Maven]
+excerpt: Currently most of the development I do is in Java. I use Eclipse as IDE and maven as build tool. In this blog post I will 
+         describe the setup of my development environment.
+---
+
+<div>
+	<p>
+		Currently most of the development I do is in Java. I use Eclipse as IDE and maven as build tool. In this blog post I will 
+		describe the setup of my development environment. The next image gives an overview of the directory structure of the 
+		development environment.
+		<script src="https://gist.github.com/vanpeerdevelopment/8138398.js"></script>		
+	</p>
+
+	<p>
+		For each project the development environment looks like the previous image.
+		<ul>
+			<li>
+				<i>Installation-Files</i>: In this directory all used installation files are kept. They are stored just in case they 
+				would be needed again in the future.
+			</li>
+			<li>
+				<i>Java</i>: The Java version that is used for development is installed in this folder. Most of the time this is the latest release of the 
+				<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE Development Kit</a> at the time 
+				of the setup.
+			</li>
+			<li>
+				<i>Maven</i>: At this location <a href="http://maven.apache.org/download.cgi">Maven</a> is unzipped.
+			</li>
+			<li>
+				<i>Maven-Repository</i>: This is the local repository used by Maven. All the dependencies and plugins that are 
+				downloaded by Maven will be stored in this directory.
+			</li>
+			<li>
+				<i>Eclipse</i>: Eclipse is unzipped at this location. This is mostly the 
+				<a href="{{ site.url }}/2013/12/26/eclipse-package.html">Eclipse IDE for Java EE Developers</a>.
+			</li>
+			<li>
+				<i>Eclipse-Workspace</i>: All the source code of the project will reside in the eclipse workspace directory.
+			</li>
+			<li>
+				<i>Environment</i>:
+				<ul>
+					<li>
+						<i>Shortcuts</i>: Contains shortcuts to start eclipse and a command line interface to use maven.
+					</li>
+					<li>
+						<i>environment.bat</i>: This bat file sets all the environment files needed by the used tools and adds some 
+						folders with executables to the path.
+					</li>
+					<li>
+						<i>cli.bat</i>: With this bat file a command line interface can be started with all the needed environment 
+						variables loaded.
+					</li>
+					<li>
+						<i>eclipse.bat</i>: This bat file will first load all environment variables and then start Eclipse.
+					</li>
+				</ul>
+			</li>			
+		</ul>
+	</p>
+
+	<p>
+		In <i>environment.bat</i> all the environment variables needed for the development environment are set as shown in the code 
+		snippet below.
+		<ul>
+			<li>
+				<i>line 3-7</i>: The directory is changed to location of environment.bat 
+				(<a href="{{ site.url }}/2013/12/24/%~dp0.html">%~dp0</a>) and then changed to the project root. This project root 
+				is saved in the PROJECT_HOME environment variable. Then the directory is changed back to the original directory 
+				(<a href="{{ site.url }}/2013/12/25/pushd-and-popd.html">pushd and popd</a>).
+			</li>
+			<li>
+				<i>line 9</i>: The JAVA_HOME variable is set to the installation directory of Java. This is necessary to setup 
+				Maven and for Eclipse.
+			</li>
+			<li>
+				<i>line 11-12</i>: Next M2_HOME is set to the Maven home directory as required for the 
+				<a href="{{ site.url }}/2013/12/24/maven-setup.html">Maven setup</a>. M2_LOCAL_REPO is set to the location of the 
+				local repository. This environment variable is used in the global maven settings to 
+				<a href="{{ site.url }}/2013/12/26/maven-local-repository.html">change the local repository location</a>.
+			</li>
+			<li>
+				<i>line 14-15</i>: Environment variables are also set for the Eclipse and Eclipse workspace directories.
+			</li>
+			<li>
+				<i>line 17</i>: The Java and Maven bin directories are added to the PATH in order to be able to execute the 
+				commands from the command line.
+			</li>
+		</ul>
+		<script src="https://gist.github.com/vanpeerdevelopment/8138468.js"></script>
+	</p>
+
+	<p>
+		<i>cli.bat</i> is displayed in the next snippet. With this file a command line interface for the development environment 
+		can be started.
+		<ul>
+			<li>
+				<i>line 3-4</i>: The current directory is changed to the location of cli.bat. This is the directory where 
+				environment.bat is also located. All the environment variables are loaded and the path is set.
+			</li>
+			<li>
+				<i>line 5-6</i>: The command line is opened in the project home with all the necessary environment variables loaded 
+				and the path adapted. All development tools are accessible through the command line interface.
+			</li>
+		</ul>
+		<script src="https://gist.github.com/vanpeerdevelopment/8138484.js"></script>
+	</p>
+
+	<p>
+		At last there is <i>eclipse.bat</i> which can be used to start eclipse.
+		<ul>
+			<li>
+				<i>line 3-4</i>: The current directory is changed to the location of eclipse.bat. This is again the directory where 
+				environment.bat is also located. All the environment variables are loaded and the path is set.
+			</li>
+			<li>
+				<i>line 5-6</i>: Eclipse is started with the Eclipse-Workspace directory as workspace. All the environment 
+				variables and path adaption are now also available within Eclipse.
+			</li>
+		</ul>
+		<script src="https://gist.github.com/vanpeerdevelopment/8138492.js"></script>
+	</p>
+
+	<p>
+		One last thing has to be done in Eclipse. The Maven plugin of Eclipse has to be configured to use the Maven installation of 
+		the development environment instead of an embedded installation (Window -&gt; Preferences -&gt; Maven -&gt; Installations). 
+		This way the global settings are used in which the location of the local repository is changed. Now Eclipse also uses the 
+		Maven-Repository directory as its local repository.
+	</p>
+</div>
