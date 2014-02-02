@@ -1,0 +1,34 @@
+---
+layout:  post
+title:   Maven Setup
+date:    2013-12-24 15:36:00
+tags:    [Maven]
+excerpt: Setting up maven is pretty easy, it only requires a few simple steps.
+---
+
+<div>
+	<p>
+		Setting up maven is pretty easy, it only requires a few simple steps.
+		<ol>
+			<li>
+				Maven is written in Java and thus needs Java to run. Install the verion of Java you would like to use. I use 
+				<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE Development Kit</a> because it also 
+				includes tools for developing, debugging and monitoring java applications such as Java Mission Control, JVisualVM, JConsole,...
+			</li>
+			<li>Download the latest <a href="http://maven.apache.org/download.cgi">Maven</a> version and unzip it.</li>
+			<li>Set JAVA_HOME environment variable to the location of your Java installation.</li>
+			<li>Set M2_HOME environment variable to the location of your Maven installation.</li>
+			<li>Add the Maven bin folder to PATH environment variable to be able to run the <i>mvn</i> command from the command line.</li>
+		</ol>
+	</p>
+
+	<p>
+		The following example shows the commands to execute to set the environment variables and adapt the path.
+		<script src="https://gist.github.com/vanpeerdevelopment/8114123.js"></script>
+	</p>
+
+	<p>
+		To check whether the configuration was successful <i>mvn -v</i> can be executed. When everything is configured correctly Maven and 
+		Java version information is printed out.
+	</p>
+</div>
