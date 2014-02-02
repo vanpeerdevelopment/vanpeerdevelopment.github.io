@@ -1,0 +1,28 @@
+---
+layout:  post
+title:   pushd and popd
+date:    2013-12-25 19:44:00
+tags:    [CLI, Windows]
+excerpt: The pushd command can be used to change the current directory and save the directory you came from. Every time the pushd 
+         command is executed the origin directory will be pushed on top of the stack that saves the history of origin directories.
+         The popd command will pop the the top directory of the stack and navigate back there.
+---
+
+<div>
+	<p>
+		The pushd command can be used to change the current directory and save the directory you came from. Every time the pushd 
+		command is executed the origin directory will be pushed on top of the stack that saves the history of origin directories.
+		The popd command will pop the the top directory of the stack and navigate back there. The combination of these two commands 
+		can be used in a bat file to change the current directory and go back to the directory the bat file was run from.
+	</p>
+
+	<p>
+		An example will show the usage of pushd and popd.
+		<script src="https://gist.github.com/vanpeerdevelopment/8114850.js"></script>
+		Suppose <i>pushd-popd.bat "C:\Temp\Example"</i> is run from <i>C:\</i>. On line three the stack will be as in the next image.
+		The first popd will navigate back to <i>C:\Temp\Example</i> ;and the second popd will navigate back to the directory the bat file was executed from <i>C:\</i>.
+		<div>
+			<img src="{{ site.url }}/images/pushd-popd.png" alt="pushd popd stack">
+		</div>
+	</p>
+</div>
