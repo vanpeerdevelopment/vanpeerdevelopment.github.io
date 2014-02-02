@@ -1,0 +1,41 @@
+---
+layout:  post
+title:   Maven3 and -Dorg.apache.maven.user-settings
+date:    2013-12-26 14:51:00
+tags:    [Maven]
+excerpt: In Maven2 it was possible to set the location of the user settings file with the <i>org.apache.maven.user-settings </i> 
+         environment variable. In the same way the location of the global settings file could be set with <i>org.apache.maven.global-
+         settings</i> environment variable. With Maven3 this is not possible anymore.
+---
+
+<div>
+	<p>
+		In Maven2 it was possible to set the location of the user settings file with the <i>org.apache.maven.user-settings </i> 
+        environment variable. In the same way the location of the global settings file could be set with 
+        <i>org.apache.maven.global-settings</i> environment variable.
+        <br/>
+        With Maven3 this is not possible anymore. You can change the location by using the <i>-s</i> or <i>-gs</i> options when 
+        executing Maven as shown in the code snippet below.
+        <script src="https://gist.github.com/vanpeerdevelopment/8133833.js"></script>
+	</p>
+
+	<p>
+		The disadvantage is that the <i>-s</i> and <i>-gs</i> options can't be added to the 
+		<a href="{{ site.url }}/2013/12/26/maven-opts.html">MAVEN_OPTS</a> environment variable. Prior to Maven3 it was possible to 
+		define the location of the settings file in the environment variables and add them to MAVEN_OPTS. 
+		This way you could redefine the location of the settings files in one central location.
+	</p>
+
+	<p>
+		I'm used to having a maven installation for each project and put all the settings for the project in the global settings 
+		file of the maven installation. The location of the user settings is changed to the location of the global settings via 
+		MAVEN_OPTS, so that only one settings file is used. This way all the project settings are confined in the projects directory. Now, without being able to set the location with MAVEN_OPTS, I just have to watch out to not override a setting in the user 
+		settings file. Actually I just do not have a user settings file to prevent this problem.
+	</p>
+
+	<p>
+		An interesting blog post concerning this topic can be found 
+		<a href="http://maven.40175.n5.nabble.com/Maven-3-support-for-org-apache-maven-user-settings-td3261146.html">here</a>. 
+		There also is a <a href="http://jira.codehaus.org/browse/MNG-5199">feature request</a> for this functionality on Mavens Jira.
+	</p>
+</div>
