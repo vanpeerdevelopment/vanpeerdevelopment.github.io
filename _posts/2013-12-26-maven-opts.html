@@ -1,0 +1,28 @@
+---
+layout:  post
+title:   MAVEN_OPTS
+date:    2013-12-26 13:31:00
+tags:    [Maven]
+excerpt: The MAVEN_OPTS environment variable can be used to set options that will be used every time the <i>mvn</i> command is 
+         executed.
+---
+
+<div>
+	<p>
+		The MAVEN_OPTS environment variable can be used to set options that will be used every time the <i>mvn</i> command is 
+		executed. To understand how these MAVEN_OPTS are used you can take a look at the <i>mvn.bat</i> file in the bin directory of 
+		your maven installation. Maven is written in Java and is executed as shown in the next code snippet, which is an extract 
+		from <i>mvn.bat</i>.
+		<script src="https://gist.github.com/vanpeerdevelopment/8132831.js"></script>
+		Here you can see that the MAVEN_OPTS are passed to java.exe every time the <i>mvn</i> command is executed. Thus if there are 
+		environment variables you have to set each time maven is executed you can add them to MAVEN_OPTS instead of manually 
+		inserting them repeatedly when executing maven.
+	</p>
+
+	<p>
+		Next follow two code snippets that are functionally equivalent. The difference is that in the last snippet you only have to 
+		set the environment variable once via MAVEN_OPTS.
+		<script src="https://gist.github.com/vanpeerdevelopment/8133127.js"></script>
+		<script src="https://gist.github.com/vanpeerdevelopment/8133218.js"></script>
+	</p>
+</div>
