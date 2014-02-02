@@ -5,6 +5,12 @@ layout: default
 <div>
 	<h2>{{ page.title }}</h2>
 	<p>{{ page.date | date_to_long_string }}</p>
+	<p>
+		Tags: 
+		{% for tag in page.tags %}  
+			{{ tag }}{% if forloop.last != true %}, {% endif %}
+		{% endfor %}
+	</p>
 	<div>
 		{{ content }}
 	</div>
