@@ -1,0 +1,49 @@
+---
+layout:  post
+title:   Git Configuration
+date:    2014-01-28 19:54:00
+tags:    [Git, VCS]
+excerpt: In Git you can configure settings such as your username or email address on three different levels. In this post the the 
+         three levels of coniguration will be explained.
+---
+
+<div>
+	<p>
+		In Git you can configure settings such as your username or email address on three different levels.
+		<ul>
+			<li>
+				<i>System configuration</i>: Configuration can be done at the system level, these settings will be used for all users 
+				and all repositories on the system. The system configuration is stored in <i>%GIT_HOME%\etc\gitconfig</i>.
+			</li>
+			<li>
+				<i>Global configuration</i>: Settings can also be configured per user. Configurations done at this level will be used 
+				for every repository the user works on. The global configuration is stored the <i>.gitconfig</i> file in the users 
+				home directory.
+			</li>
+			<li>
+				<i>Repository configuration</i>: It is possible to configure some settings at the repository level. The repository 
+				configuration is stored in <i>\.git\config</i> file in the repository.
+			</li>
+		</ul>
+	</p>
+
+	<p>
+		It is possible to override a setting made at a more general level on a more specific level. When settings are configured on 
+		more than one level the most specific settings will be used. When for example Bob is configured as username on the system 
+		level and Fred is configured on the repository level, Fred will be used as username when committing in the repository.
+		<br/>
+		Because I use a separate Git installation for each project all my configurations are done at the system level. This way all my 
+		configurations are nicely separated for each project and done in one place.
+	</p>
+
+	<p>
+		The code snippet below shows how a configuration can be added at the different levels and how the configurations at the 
+		different levels can be retrieved.
+		<script src="https://gist.github.com/vanpeerdevelopment/8673683.js"></script>
+	</p>
+
+	<p>
+		An overview of everything possible with the <i>git config</i> command can be found
+		<a href="https://www.kernel.org/pub/software/scm/git/docs/git-config.html">here</a>.
+	</p>
+</div>
