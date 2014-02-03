@@ -1,0 +1,54 @@
+---
+layout:  post
+title:   MoreUnit
+date:    2014-01-23 20:27:00
+tags:    [Eclipse, MoreUnit, TDD]
+excerpt: MoreUnit is a great Eclipse plugin which makes writing and maintaining tests easier. Rename classes or methods and MoreUnit 
+         will rename the corresponding test code too. Move classes and MoreUnit will move the corresponding test classes.
+---
+
+<div>
+	<p>
+		<a href="http://moreunit.sourceforge.net/">MoreUnit</a> is a great Eclipse plugin which makes writing and maintaining 
+		tests easier. Rename classes or methods and MoreUnit will rename the corresponding test code too. Move classes and MoreUnit 
+		will move the corresponding test classes.
+	</p>
+
+	<p>
+		MoreUnit also provides several shortcuts to help you create and run tests easily.
+		<ul>
+			<li>
+				<i>Ctrl + J</i>: Jump to the test class or method you are editing. When no test class exists MoreUnit proposes to 
+				create a new test class.
+			</li>
+			<li>
+				<i>Ctrl + R</i>: Run the tests of the class that is opened.
+			</li>
+			<li>
+				<i>Ctrl + U</i>: Generate a test method for the method you are editing.&nbsp;When no test class exists MoreUnit first proposes to create a new test class.
+			</li>
+		</ul>
+	</p>
+
+	<p>
+		When installing MoreUnit you have to configure several things. (Window -&gt; Preferences -&gt; MoreUnit -&gt; Java)
+		<ul>
+			<li>Define the source folder where the test classes will be located: <i>src/test/java</i></li>
+			<li>Select the correct JUnit version: <i>JUnit 4</i></li>
+			<li>Choose the naming pattern: <i>${srcFile}*Test</i></li>
+			<li>
+				Do not use the test prefix for test mehtods. The <i>@Test</i> annotation of JUnit 4 will make clear that it is a test.
+			</li>
+			<li>Use an empty method content when creating a new test.</li>
+			<li>
+				Do not add a pre- or suffix to the test package, this way the test class will be in the same package as the class 
+				under test. I also do not automatically use a specific superclass.
+			</li>
+			<li>
+				Enable extended search for test methods. By enabling this option MoreUnit will search the body of a test method to try 
+				and figure out which method is under test. This is useful when your test methods have other names than the method 
+				under test.
+			</li>
+		</ul>
+	</p>
+</div>
