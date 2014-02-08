@@ -36,7 +36,7 @@ excerpt: Currently most of the development I do is in Java. I use Eclipse as IDE
 			</li>
 			<li>
 				<i>Eclipse</i>: Eclipse is unzipped at this location. This is mostly the 
-				<a href="{{ site.url }}/2013/12/26/eclipse-package.html">Eclipse IDE for Java EE Developers</a>.
+				<a href="{% post_url 2013-12-26-eclipse-package %}">Eclipse IDE for Java EE Developers</a>.
 			</li>
 			<li>
 				<i>Eclipse-Workspace</i>: All the source code of the project will reside in the eclipse workspace directory.
@@ -69,9 +69,9 @@ excerpt: Currently most of the development I do is in Java. I use Eclipse as IDE
 		<ul>
 			<li>
 				<i>line 3-7</i>: The directory is changed to location of environment.bat 
-				(<a href="{{ site.url }}/2013/12/24/%25~dp0.html">%~dp0</a>) and then changed to the project root. This project 
+				(<a href="{% post_url 2013-12-24-%~dp0 %}">%~dp0</a>) and then changed to the project root. This project 
 				root is saved in the PROJECT_HOME environment variable. Then the directory is changed back to the original 
-				directory (<a href="{{ site.url }}/2013/12/25/pushd-and-popd.html">pushd and popd</a>).
+				directory (<a href= "{% post_url 2013-12-25-pushd-and-popd %}">pushd and popd</a>).
 			</li>
 			<li>
 				<i>line 9</i>: The JAVA_HOME variable is set to the installation directory of Java. This is necessary to setup 
@@ -79,9 +79,9 @@ excerpt: Currently most of the development I do is in Java. I use Eclipse as IDE
 			</li>
 			<li>
 				<i>line 11-12</i>: Next M2_HOME is set to the Maven home directory as required for the 
-				<a href="{{ site.url }}/2013/12/24/maven-setup.html">Maven setup</a>. M2_LOCAL_REPO is set to the location of the 
+				<a href="{% post_url 2013-12-24-maven-setup %}">Maven setup</a>. M2_LOCAL_REPO is set to the location of the 
 				local repository. This environment variable is used in the global maven settings to 
-				<a href="{{ site.url }}/2013/12/26/maven-local-repository.html">change the local repository location</a>.
+				<a href="{% post_url 2013-12-26-maven-local-repository %}">change the local repository location</a>.
 			</li>
 			<li>
 				<i>line 14-15</i>: Environment variables are also set for the Eclipse and Eclipse workspace directories.
