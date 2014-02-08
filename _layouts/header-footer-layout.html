@@ -1,11 +1,13 @@
 ---
-layout: bootstrap
+layout: bootstrap-layout
 ---
 
 <div class="wrapper">
 	{% include navigation.html %}
 	{% include banner.html %}
-	{{ content }}
+	<div class="container">
+		{{ content }}
+	</div>
 	<div class="push"></div>
 </div>
 <footer class="footer">
