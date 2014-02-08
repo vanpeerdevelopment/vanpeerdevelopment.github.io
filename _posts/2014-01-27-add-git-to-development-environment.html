@@ -22,7 +22,7 @@ excerpt: Adding support for a version control system to the Development Environm
 			<li>Download <a href="http://git-scm.com/downloads">Git</a>.</li>
 			<li>
 				Add a Git folder under the project root.
-				<script src="https://gist.github.com/vanpeerdevelopment/8656672.js"></script>
+				{% gist 8656672 development-environment-git.txt %}
 			</li>
 			<li>
 				Install Git in the new folder.
@@ -41,13 +41,13 @@ excerpt: Adding support for a version control system to the Development Environm
 			</li>
 			<li>
 				Set a GIT_HOME environment variable to the location of Git in <i>environment.bat</i> as shown below.
-				<script src="https://gist.github.com/vanpeerdevelopment/8656930.js"></script>
+				{% gist 8656930 environment-git.bat %}
 			</li>
 			<li>
 				Create <i>git.bat</i> in the environment folder to open git bash in the eclipse workspace. As shown below the bat file 
 				first navigates to the directory where <i>git.bat</i> resides. Next all the environment variables are loaded and the 
 				current directory is changed to the eclipse workspace. At last Git bash is opened.
-				<script src="https://gist.github.com/vanpeerdevelopment/8656991.js"></script>
+				{% gist 8656991 git.bat %}
 			</li>
 			<li>Add a shortcut to the shortcuts folder which runs <i>git.bat</i>.</li>
 		</ol>
