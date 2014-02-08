@@ -1,8 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>{{ page.title }}</title>
+
+		<!-- Set the character set to utf-8 -->
+		<meta charset="utf-8">
+		<!-- Edge mode tells Internet Explorer to display content in the highest mode available. -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- The viewport is set to the width of the device and initially shown at 1:1 scale (without zooming) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Set a favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="{{ site.url }}/images/favicon.ico">
+		<!-- Load Bootstraps stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	</head>
 
 	<body>	
@@ -11,5 +21,11 @@
 		<div>
 			{{ content }}
 		</div>
+
+		<!-- Placed at the end of the document to speed up page loading-->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<!-- Load Bootstraps JavaScript plugins -->
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	</body>
 </html>
