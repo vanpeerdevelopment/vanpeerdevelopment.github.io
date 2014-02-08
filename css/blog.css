@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+.footer {
+	height: 4em;
+	background-color: #f5f5f5
+}
+ 
+.push {
+	height: 4em;
+}
+
+.text-footer {
+	margin: 1em;
+}
