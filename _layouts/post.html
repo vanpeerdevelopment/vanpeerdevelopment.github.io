@@ -3,15 +3,17 @@ layout: header-footer-layout
 ---
 
 <div id="post" class="row">
-	<h2>{{ page.title }}</h2>
-	<p>{{ page.date | date_to_long_string }}</p>
-	<p>
-		Tags: 
-		{% for tag in page.tags %}  
-			{{ tag }}{% if forloop.last != true %}, {% endif %}
-		{% endfor %}
-	</p>
-	<div>
-		{{ content }}
+	<div class="col-md-12">
+		<h2>{{ page.title }}</h2>
+		<p>{{ page.date | date_to_long_string }}</p>
+		<p>
+			Tags: 
+			{% for tag in page.tags %}  
+				{{ tag }}{% if forloop.last != true %}, {% endif %}
+			{% endfor %}
+		</p>
+		<div>
+			{{ content }}
+		</div>
 	</div>
 </div>
