@@ -6,25 +6,23 @@ tags:    [CLI, Windows]
 excerpt: "<code>%~dp0</code> is a very useful command when writing bat files. It will resolve to the folder in which the executing bat file is located. It is also very weird looking, but there is an explanation for the structure of the command."
 ---
 
-<div>
-	<p>
-		<code>%~dp0</code> is a very useful command when writing bat files. It will resolve to the folder in which the executing bat file is located. It is also very weird looking, but there is an explanation for the structure of the command. By splitting up the command into its smaller components it will become clear what the function of the different characters is.
-		<ul>
-			<li><code>%0</code>: resolves to the executing bat file</li>
-			<li><code>%1</code>: resolves to the first argument</li>
-			<li><code>%~1</code>: resolves to the first argument and removes surrounding quotes</li>
-			<li><code>%~d0</code>: resolves to the drive of the executing bat file</li>
-			<li><code>%~p0</code>: resolves to the path of the executing bat file</li>
-			<li><code>%~dp0</code>: resolves to the folder of the executing bat file</li>
-		</ul>
-	</p>
+<p>
+	<code>%~dp0</code> is a very useful command when writing bat files. It will resolve to the folder in which the executing bat file is located. It is also very weird looking, but there is an explanation for the structure of the command. By splitting up the command into its smaller components it will become clear what the function of the different characters is.
+	<ul>
+		<li><code>%0</code>: resolves to the executing bat file</li>
+		<li><code>%1</code>: resolves to the first argument</li>
+		<li><code>%~1</code>: resolves to the first argument and removes surrounding quotes</li>
+		<li><code>%~d0</code>: resolves to the drive of the executing bat file</li>
+		<li><code>%~p0</code>: resolves to the path of the executing bat file</li>
+		<li><code>%~dp0</code>: resolves to the folder of the executing bat file</li>
+	</ul>
+</p>
 
-	<p>
-		Next to <em>d</em> and <em>p</em> there are other characters that can be used to extract information about the executing bat file or its parameters. A nice overview can be found <a href="http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/percent.mspx?mfr=true">here</a>.
-	</p>
+<p>
+	Next to <em>d</em> and <em>p</em> there are other characters that can be used to extract information about the executing bat file or its parameters. A nice overview can be found <a href="http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/percent.mspx?mfr=true">here</a>.
+</p>
 
-	<p>
-		Now let's take a look at an example that shows the usage of the different components of <code>%~dp0</code>.
-		{% gist 8113259 batch-parameters.bat %}
-	</p>
-</div>
+<p>
+	Now let's take a look at an example that shows the usage of the different components of <code>%~dp0</code>.
+	{% gist 8113259 batch-parameters.bat %}
+</p>
