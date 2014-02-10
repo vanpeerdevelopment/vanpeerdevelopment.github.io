@@ -3,43 +3,35 @@ layout:  post
 title:   Java Formatter (Eclipse)
 date:    2013-12-31 16:56:00
 tags:    [Eclipse]
-excerpt: In Eclipse it is possible to configure how Java source code has to be formatted. When a Java file is open in Eclipse the 
-         code can be formatted by <i>clicking right -&gt; Source -&gt; Format</i> or by using the shortcut <i>Ctrl + Shift + F</i>.
+excerpt: "In Eclipse it is possible to configure how Java source code has to be formatted. When a Java file is open in Eclipse the code can be formatted by <code>clicking right -&gt; Source -&gt; Format</code> or by using the shortcut <code>Ctrl + Shift + F</code>."
 ---
 
-<div>
-	<p>
-		In Eclipse it is possible to configure how Java source code has to be formatted. When a Java file is open in Eclipse the 
-		code can be formatted by <i>clicking right -&gt; Source -&gt; Format</i> or by using the shortcut <i>Ctrl + Shift + F</i>.
-	</p>
+<p>
+	In Eclipse it is possible to configure how Java source code has to be formatted. When a Java file is open in Eclipse the code can be formatted by <code>clicking right -&gt; Source -&gt; Format</code> or by using the shortcut <code>Ctrl + Shift + F</code>.
+</p>
 
-	<p>
-		An export of my formatter settings can be found <a href="https://gist.github.com/vanpeerdevelopment/8198341">here</a>. 
-		My settings are based on the standard Eclipse settings with some small adaptions. The most important changes are listed 
-		below. (Window -&gt; Preferences -&gt; Java -&gt; Code Style -&gt; Formatter)
-		<ul>
-			<li>
-				Line Wrapping
-				<ul>
-					<li>Maximum line width of 100</li>
-					<li>Never join already wrapped lines</li>
-				</ul>
-			</li>
-			<li>
-				Comments
-				<ul>
-					<li>Maximum line width of 100</li>
-					<li>Never join lines</li>
-				</ul>
-			</li>
-			<li>Enable the Off/On tags</li>
-		</ul>
-	</p>
+<p>
+	An export of my formatter settings can be found <a href="https://gist.github.com/vanpeerdevelopment/8198341">here</a>. My settings are based on the standard Eclipse settings with some small adaptions. The most important changes are listed below. (<code>Window -&gt; Preferences -&gt; Java -&gt; Code Style -&gt; Formatter</code>)
+	<ul>
+		<li>
+			Line Wrapping
+			<ul>
+				<li>Maximum line width of 100</li>
+				<li>Never join already wrapped lines</li>
+			</ul>
+		</li>
+		<li>
+			Comments
+			<ul>
+				<li>Maximum line width of 100</li>
+				<li>Never join lines</li>
+			</ul>
+		</li>
+		<li>Enable the Off/On tags</li>
+	</ul>
+</p>
 
-	<p>
-		The last option is useful when you have a piece of code you don't want to format. By adding the annotation 
-		<i>@formatter:off</i> before the code and <i>@formatter:on</i> after the code, formatting will be disabled for the code 
-		between these annotations. The next code snippet shows an example of the annotations usage.
-		{% gist 8198598 formatter-annotation.java %}
-	</p>
-</div>
+<p>
+	The last option is useful when you have a piece of code you don't want to format. By adding the annotation <code>@formatter:off</code> before the code and <code>@formatter:on</code> after the code, formatting will be disabled for the code between these annotations. The next code snippet shows an example of the annotations usage.
+	{% gist 8198598 formatter-annotation.java %}
+</p>
