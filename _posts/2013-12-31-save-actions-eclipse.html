@@ -3,46 +3,35 @@ layout:  post
 title:   Save Actions (Eclipse)
 date:    2013-12-31 17:20:00
 tags:    [Eclipse]
-excerpt: The Java editor save actions are a very useful feature in Eclipse which will help you have more uniform and clean-looking 
-         code. You can configure a set of actions that Eclipse will automatically perform on a Java file when you save it. This way 
-         you can configure (part of) your coding conventions as save actions and Eclipse will correct the code if it is not 
-         compliant with these coding conventions.
+excerpt: "The Java editor save actions are a very useful feature in Eclipse which will help you have more uniform and clean-looking code. You can configure a set of actions that Eclipse will automatically perform on a Java file when you save it. This way you can configure (part of) your coding conventions as save actions and Eclipse will correct the code if it is not compliant with these coding conventions."
 ---
 
-<div>
-	<p>
-		The Java editor save actions are a very useful feature in Eclipse which will help you have more uniform and clean-looking 
-		code. You can configure a set of actions that Eclipse will automatically perform on a Java file when you save it. This way 
-		you can configure (part of) your coding conventions as save actions and Eclipse will correct the code if it is not compliant 
-		with these coding conventions.
-	</p>
+<p>
+	The Java editor save actions are a very useful feature in Eclipse which will help you have more uniform and clean-looking code. You can configure a set of actions that Eclipse will automatically perform on a Java file when you save it. This way you can configure (part of) your coding conventions as save actions and Eclipse will correct the code if it is not compliant with these coding conventions.
+</p>
 
-	<p>
-		My save action configuration is as follows. (Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Save Actions)
-		<ul>
-			<li>
-				<i>Format source code</i> is enabled to format all lines. My formatter settings are described in the blog post about 
-				the <a href="{% post_url 2013-12-31-java-formatter-eclipse %}">Eclipse Java Formatter</a>.
-			</li>
-			<li>
-				<i>Organize imports</i> is also enabled to group similar imports and to remove unused imports. Imports can be 
-				organized without saving by <i>clicking right -&gt; Source -&gt; Organize Imports</i> or by using the shortcut 
-				<i>Ctrl + Shift + O</i>.
-			</li>
-			<li>
-				<i>Additional actions</i>
-				<ul>
-					<li>Remove trailing white spaces on all lines</li>
-					<li>Correct indentation</li>
-					<li>Change indirect accesses to static members to direct accesses (accesses through subtypes)</li>
-					<li>Change non static accesses to static members using declaring type</li>
-					<li>Add missing '@Override' annotations</li>
-					<li>Add missing '@Override' annotations to implementations of interface methods</li>
-					<li>Add missing '@Deprecated' annotations</li>
-					<li>Remove unused imports</li>
-					<li>Remove unnecessary casts</li>
-				</ul>
-			</li>
-		</ul>
-	</p>
-</div>
+<p>
+	My save action configuration is as follows. (<code>Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Save Actions</code>)
+	<ul>
+		<li>
+			<em>Format source code</em> is enabled to format all lines. My formatter settings are described in the blog post about the <a href="{% post_url 2013-12-31-java-formatter-eclipse %}">Eclipse Java Formatter</a>.
+		</li>
+		<li>
+			<em>Organize imports</em> is also enabled to group similar imports and to remove unused imports. Imports can be organized without saving by <code>clicking right -&gt; Source -&gt; Organize Imports</code> or by using the shortcut <code>Ctrl + Shift + O</code>.
+		</li>
+		<li>
+			<em>Additional actions</em>
+			<ul>
+				<li>Remove trailing white spaces on all lines</li>
+				<li>Correct indentation</li>
+				<li>Change indirect accesses to static members to direct accesses (accesses through subtypes)</li>
+				<li>Change non static accesses to static members using declaring type</li>
+				<li>Add missing '@Override' annotations</li>
+				<li>Add missing '@Override' annotations to implementations of interface methods</li>
+				<li>Add missing '@Deprecated' annotations</li>
+				<li>Remove unused imports</li>
+				<li>Remove unnecessary casts</li>
+			</ul>
+		</li>
+	</ul>
+</p>
