@@ -3,27 +3,21 @@ layout:  post
 title:   Setting Maven Heap and PermGen Size
 date:    2013-12-26 13:59:00
 tags:    [Maven]
-excerpt: "Once in a while you will run into memory problems when using maven. Whether it is a <i>java.lang.OutOfMemoryError: Java 
-         heap space</i> or <i>java.lang.OutOfMemoryError: PermGen space</i>, these problems can be fixed by increasing the heap 
-         and/or permgen size."
+excerpt: "Once in a while you will run into memory problems when using maven. Whether it is a <em>java.lang.OutOfMemoryError: Java heap space</em> or <em>java.lang.OutOfMemoryError: PermGen space</em>, these problems can be fixed by increasing the heap and/or permgen size."
 ---
 
-<div>
-	<p>
-		Once in a while you will run into memory problems when using maven. Whether it is a <i>java.lang.OutOfMemoryError: Java heap 
-		space</i> or <i>java.lang.OutOfMemoryError: PermGen space</i>, these problems can be fixed by increasing the heap and/or 
-		permgen size. This can be done by setting some extra options in the <a href="{% post_url 2013-12-26-maven-opts %}">
-		MAVEN_OPTS</a> environment variable as in the following example.
-		{% gist 8133495 maven-memory-settings.bat %}
-	</p>
+<p>
+	Once in a while you will run into memory problems when using maven. Whether it is a <em>java.lang.OutOfMemoryError: Java heap space</em> or <em>java.lang.OutOfMemoryError: PermGen space</em>, these problems can be fixed by increasing the heap and/or permgen size. This can be done by setting some extra options in the <a href="{% post_url 2013-12-26-maven-opts %}">
+	<code>MAVEN_OPTS</code></a> environment variable as in the following example.
+	{% gist 8133495 maven-memory-settings.bat %}
+</p>
 
-	<p>
-		With these options the different memory settings can be tuned:
-		<ul>
-			<li>-Xms512m: sets the initial heap size to 512 MB</li>
-			<li>-Xmx1024m: sets the maximum heap size to 1 GB</li>
-			<li>-XX:PermSize=256m: sets the initial PermGen size to 256 MB</li>
-			<li>-XX:MaxPermSize=512m: sets the maximum PermGen size to 512 MB</li>
-		</ul>
-	</p>
-</div>
+<p>
+	With these options the different memory settings can be tuned:
+	<ul>
+		<li><code>-Xms512m</code>: sets the initial heap size to 512 MB</li>
+		<li><code>-Xmx1024m</code>: sets the maximum heap size to 1 GB</li>
+		<li><code>-XX:PermSize=256m</code>: sets the initial PermGen size to 256 MB</li>
+		<li><code>-XX:MaxPermSize=512m</code>: sets the maximum PermGen size to 512 MB</li>
+	</ul>
+</p>
