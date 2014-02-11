@@ -3,64 +3,54 @@ layout:  post
 title:   Git
 date:    2014-01-27 20:47:00
 tags:    [Git, VCS]
-excerpt: Git is a distributed version control system. Version control systems give you the ability to keep track of the entire 
-         history of all the files you place under version control. In distributed version control systems everyone who is working on 
-         the files under version control has a local copy of the history.
+excerpt: "Git is a distributed version control system. Version control systems give you the ability to keep track of the entire history of all the files you place under version control. In distributed version control systems everyone who is working on the files under version control has a local copy of the history."
 ---
-<div>
-	<p>
-		<a href="http://git-scm.com/">Git</a> is a distributed version control system. Version control systems give you the ability to
-		keep track of the entire history of all the files you place under version control. In distributed version control systems
-		everyone who is working on the files under version control has a local copy of the history.
-		<br/>
-		Typically there is a remote repository, e.g. hosted on <a href="https://github.com/">GitHub</a>, that acts as the central
-		server from which all users <i>pull</i> the changes made by other users and to which they <i>push</i> the changes they made
-		locally to share them with the other users. This remote repository contains the entire history of all the files it manages.
-	</p>
-	<p>
-		The picture depicted below shows the typical use of Git.
-		<img class="img-responsive" src="/img/git.png" alt="Git">
-	</p>
-	<p>
-		<ol>
-			<li>
-				As a first step a local copy is made of the remote repository the user wants to collaborate on. This local copy is called a <i>clone</i>. This is done with the following command: <i>git clone [remote] [local]</i>.
-			</li>
-			<li>
-				The local copy's directory structure is depicted in the next code snippet. The .git folder contains the actual
-				<i>local repository</i>, containing the entire history of the files under version control. All other files and folders
-				form the <i>working tree</i>, this is a snapshot of the most recent version of the files.
-				<br />
-				Repositories containing the entire history and a working tree are called <i>non-bare repositories</i>. When only the
-				history is saved, as is often the case in the remote repository, we speak of a <i>bare repository</i>.
+
+<p>
+	<ul class="list-unstyled">
+		<li>
+			<a href="http://git-scm.com/">Git</a> is a distributed version control system. Version control systems give you the ability to keep track of the entire history of all the files you place under version control. In distributed version control systems everyone who is working on the files under version control has a local copy of the history.
+		</li>
+		<li>
+			Typically there is a remote repository, e.g. hosted on <a href="https://github.com/">GitHub</a>, that acts as the central server from which all users <em>pull</em> the changes made by other users and to which they <em>push</em> the changes they made locally to share them with the other users. This remote repository contains the entire history of all the files it manages.
+		</li>
+	</ul>
+</p>
+
+<p>
+	The picture depicted below shows the typical use of Git.
+	<img class="img-responsive" src="/img/git.png" alt="Git">
+</p>
+<p>
+	<ol>
+		<li>
+			As a first step a local copy is made of the remote repository the user wants to collaborate on. This local copy is called a <em>clone</em>. This is done with the following command: <code>git clone [remote] [local]</code>.
+		</li>
+		<li>
+			<ul class="list-unstyled">
+				<li>
+					The local copy's directory structure is depicted in the next code snippet. The .git folder contains the actual <em>local repository</em>, containing the entire history of the files under version control. All other files and folders form the <em>working tree</em>, this is a snapshot of the most recent version of the files.
+				</li>
+				<li>
+					Repositories containing the entire history and a working tree are called <em>non-bare repositories</em>. When only the history is saved, as is often the case in the remote repository, we speak of a <em>bare repository</em>.
+				</li>
 				<p>{% gist 8654042 git-local-repository.txt %}</p>
-			</li>
-			<li>
-				When the user is editing files he will be manipulating the <i>working tree</i>. Files and folders will be added,
-				deleted and/or modified. When done editing files the status of the working tree can be viewed by running the
-				<i>git status</i> command. This will show all the changes in the working tree and what can be done with them.
-			</li>
-			<li>
-				The changes made in the working tree that are ready to be committed to the local repository are first added to the
-				<i>staging area</i> with the <i>git add -A</i> command. The <i>-A</i> option will also add deletions to the staging
-				area.
-			</li>
-			<li>
-				Next the changes in the staging area are committed to the local repository using <i>git commit -m "[message]"</i>.
-				This results in a new snapshot of the all the files under version control in the local repository. After the commit
-				the files are removed from the staging area. With <i>git log</i> the log of all the commits done to the repository can
-				be listed.
-			</li>
-			<li>
-				To synchronize all the changes other collaborators made to the remote repository the <i>git pull</i> can be executed.
-				To synchronize all the local changes to other collaborators <i>git push</i> can be executed to push your local changes
-				to the remote repository.
-			</li>
-		</ol>
-	</p>
-	<p>
-		Some interesting starting points to learn more about git are
-		<a href="http://www.vogella.com/tutorials/Git/article.html">the git tutorial by Lars Vogel</a> and
-		<a href="http://git-scm.com/book/en/Getting-Started-Git-Basics">Git basics on the official Git website</a>.
-	</p>
-</div>
+			</ul>
+		</li>
+		<li>
+			When the user is editing files he will be manipulating the <em>working tree</em>. Files and folders will be added, deleted and/or modified. When done editing files the status of the working tree can be viewed by running the <code>git status</code> command. This will show all the changes in the working tree and what can be done with them.
+		</li>
+		<li>
+			The changes made in the working tree that are ready to be committed to the local repository are first added to the <em>staging area</em> with the <code>git add -A</code> command. The <em>-A</em> option will also add deletions to the staging area.
+		</li>
+		<li>
+			Next the changes in the staging area are committed to the local repository using <code>git commit -m "[message]"</code>. This results in a new snapshot of the all the files under version control in the local repository. After the commit the files are removed from the staging area. With <code>git log</code> the log of all the commits done to the repository can be listed.
+		</li>
+		<li>
+			To synchronize all the changes other collaborators made to the remote repository the <code>git pull</code> can be executed. To synchronize all the local changes to other collaborators <code>git push</code> can be executed to push your local changes to the remote repository.
+		</li>
+	</ol>
+</p>
+<p>
+	Some interesting starting points to learn more about git are <a href="http://www.vogella.com/tutorials/Git/article.html">the git tutorial by Lars Vogel</a> and	<a href="http://git-scm.com/book/en/Getting-Started-Git-Basics">Git basics on the official Git website</a>.
+</p>
