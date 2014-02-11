@@ -3,36 +3,26 @@ layout:  post
 title:   Maven Settings (Eclipse)
 date:    2014-01-23 19:32:00
 tags:    [Eclipse, Maven]
-excerpt: The Maven preferences I use in Eclipse are described in this post.
+excerpt: "The Maven preferences I use in Eclipse are described in this post."
 ---
 
-<div>
-	<p>
-		The Maven preferences I use in Eclipse are the following. (Window -&gt; Preferences -&gt; Maven)
-		<ul>
-			<li>
-				Allowing Maven to download artifact sources and JavaDoc makes it possible to take a look at the source code of the 
-				artifacts you use and is also helpful for debugging.
-			</li>
-			<li>
-				To make sure that the projects are up to date when starting to work in Eclipse I enable Maven to update maven 
-				projects on startup and to dowload repository index updates on startup.
-			</li>
-			<li>
-				The option to hide folders of physically nested modules is very useful when using a hierarchical structure. The 
-				submodules of a parent module won't be visible under the parent module in Eclipse.
-			</li>
-			<li>
-				As described in the post about the 
-				<a href="{% post_url 2013-12-27-development-environment-setup %}">development environment setup</a> 
-				the embedded Maven installation is disabled and the Maven installation of the development environment is used. As a 
-				result the global settings file of the development environment is used in which the local repository location is 
-				configured.
-			</li>
-			<li>
-				The option to open the XML page in the POM editor by default is enabled because I prefer to edit the XML rather than 
-				to use the user interface of the Maven plugin.
-			</li>
-		</ul>
-	</p>
-</div>
+<p>
+	The Maven preferences I use in Eclipse are the following. (<code>Window -&gt; Preferences -&gt; Maven</code>)
+	<ul>
+		<li>
+			Allowing Maven to download artifact sources and JavaDoc makes it possible to take a look at the source code of the artifacts you use and is also helpful for debugging.
+		</li>
+		<li>
+			To make sure that the projects are up to date when starting to work in Eclipse I enable Maven to update maven projects on startup and to dowload repository index updates on startup.
+		</li>
+		<li>
+			The option to hide folders of physically nested modules is very useful when using a hierarchical structure. The submodules of a parent module won't be visible under the parent module in Eclipse.
+		</li>
+		<li>
+			As described in the post about the <a href="{% post_url 2013-12-27-development-environment-setup %}">development environment setup</a> the embedded Maven installation is disabled and the Maven installation of the development environment is used. As a result the global settings file of the development environment is used in which the local repository location is configured.
+		</li>
+		<li>
+			The option to open the XML page in the POM editor by default is enabled because I prefer to edit the XML rather than to use the user interface of the Maven plugin.
+		</li>
+	</ul>
+</p>
