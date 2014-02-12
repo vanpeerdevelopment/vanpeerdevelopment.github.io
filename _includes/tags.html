@@ -1,0 +1,16 @@
+<div id="tags" class="row">
+	<div class="col-md-12">
+		<ul class="list-unstyled">
+			<li>
+				<span class="glyphicon glyphicon-tags"></span> Tags
+			</li>
+			<li>
+				{% for tag in site.tags %}
+					<a href="">
+						<span class="label label-primary">{{ tag[0] }}</span>
+					</a>
+				{% endfor %}
+			</li>
+		</ul>
+	</div>
+</div>
