@@ -6,7 +6,7 @@
 			</li>
 			<li>
 				{% for tag in site.tags %}
-					<a href="">
+					<a href="/tags/{{ tag[0] }}">
 						<span class="label label-primary">{{ tag[0] }}</span>
 					</a>
 				{% endfor %}

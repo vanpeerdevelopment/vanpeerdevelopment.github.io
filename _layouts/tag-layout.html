@@ -1,9 +1,8 @@
 ---
 layout: sidebar-layout
-title: Van Peer Development
 ---
 
-{% for post in site.posts %}
+{% for post in site.tags[page.tag] %}
 	<div class="row">
 		<div class="col-md-12">
 			<h3>
