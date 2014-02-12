@@ -6,7 +6,9 @@
 			</li>
 			<li>
 				{% for tag in site.tags %}
-					{% include tag-link tag="[tag[0]]" %}
+					<a class="tag" href="/tags/{{ tag[0] }}">
+						<span class="label label-primary">{{ tag[0] }}</span>
+					</a>
 				{% endfor %}
 			</li>
 		</ul>
