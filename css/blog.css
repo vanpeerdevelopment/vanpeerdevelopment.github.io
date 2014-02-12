@@ -25,3 +25,7 @@ html, body {
 .text-footer {
 	margin: 1em;
 }
+
+a.tag:hover{
+	text-decoration: none;
+}

@@ -8,7 +8,7 @@ layout: sidebar-layout
 		<p><span class="glyphicon glyphicon-calendar"></span> {{ page.date | date: "%A, %-d %B %Y, %H:%M" }}</p>
 		<p><span class="glyphicon glyphicon-tags"></span> Tags:
 			{% for tag in page.tags %}
-				<a href="/tags/{{ tag }}">
+				<a class="tag" href="/tags/{{ tag }}">
 					<span class="label label-primary">{{ tag }}</span>
 				</a>
 			{% endfor %}
