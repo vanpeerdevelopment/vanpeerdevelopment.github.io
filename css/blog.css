@@ -1,3 +1,4 @@
+/* Footer */
 * {
 	margin: 0;
 }
@@ -26,6 +27,7 @@ html, body {
 	margin: 1em;
 }
 
+/* Do not underline a tag link when hovering */
 a.tag:hover{
 	text-decoration: none;
 }
