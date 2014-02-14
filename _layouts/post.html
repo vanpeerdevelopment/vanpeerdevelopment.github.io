@@ -5,8 +5,8 @@ layout: sidebar-layout
 <div id="post" class="row">
 	<div class="col-md-12">
 		<h2>{{ page.title }}</h2>
-		<p><i class="fa fa-calendar"></i></span> {{ page.date | date: "%A, %-d %B %Y, %H:%M" }}</p>
-		<p><i class="fa fa-tags"></i></span> Tags:
+		<p><i class="fa fa-calendar fa-fw"></i></span> {{ page.date | date: "%A, %-d %B %Y, %H:%M" }}</p>
+		<p><i class="fa fa-tags fa-fw"></i></span> Tags:
 			{% for tag in page.tags %}
 				<a class="tag" href="/tags/{{ tag }}">
 					<span class="label label-primary">{{ tag }}</span>
