@@ -3,7 +3,7 @@ layout: sidebar-layout
 title: Van Peer Development
 ---
 
-{% for post in site.posts %}
+{% for post in paginator.posts %}
 	<div class="row">
 		<div class="col-md-12">
 			<h3>
@@ -23,3 +23,16 @@ title: Van Peer Development
 		</div>
 	</div>
 {% endfor %}
+
+<div id="pagination" class="row">
+	<div class="col-md-12">
+		<ul class="pager">
+			{% if paginator.previous_page %}
+				<li class="previous"><a href="{{ paginator.previous_page_path }}">&larr; Newer</a></li>
+			{% endif %}
+			{% if paginator.next_page %}
+				<li class="next"><a href="{{ paginator.next_page_path }}">Older &rarr;</a></li>
+			{% endif %}
+		</ul>
+	</div>
+</div>

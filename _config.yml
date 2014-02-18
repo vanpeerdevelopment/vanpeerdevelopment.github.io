@@ -1,3 +1,4 @@
 timezone: Europe/Brussels
 excerpt_separator: ""
 permalink: pretty
+paginate: 5
