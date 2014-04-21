@@ -1,8 +1,5 @@
-// Search in title, tags, content
-function search() {
-	var query = $("#search-input").val();
-    alert(query);
-};
+---
+---
 
 // Initialize search function on page load.
 $(document).ready(function() {
@@ -21,3 +18,40 @@ $(document).ready(function() {
 		}
 	});
 });
+
+function search_engine(){
+	var index;
+	var posts = [];
+
+	var init_index = function(){
+		index = lunr(function(){
+			this.field('title', {boost: 100});
+			this.field('tags', {boost: 10});
+			this.field('content');
+			this.ref('url');
+		});
+	};
+
+	var init_posts = function(){
+		{%for post in site.posts %}
+		var search_entry = {% include searchentry.json %};
+		index.add(search_entry);
+		posts.push(search_entry);
+		{% endfor %}
+	};
+
+	init_index();
+	init_posts();
+
+	return {
+		search: function(query){
+			return index.search(query);
+		}
+	};
+};
+
+function search() {
+	var query = $("#search-input").val();
+	var results = search_engine().search(query);
+    alert(query + " (" + results.length + " results)");
+};

@@ -1,0 +1,6 @@
+{
+	title: "{{ post.title  }}",
+	tags: "{{ post.tags | join: ' ' }}",
+	content: "{{ post.content | strip_html  | strip_newlines | remove: '"' }}",
+	url: "{{ post.url }}"
+}
