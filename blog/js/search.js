@@ -1,6 +1,7 @@
 // Search in title, tags, content
 function search() {
-    alert('Searching...');
+	var query = $("#search-input").val();
+    alert(query);
 };
 
 // Initialize search function on page load.
