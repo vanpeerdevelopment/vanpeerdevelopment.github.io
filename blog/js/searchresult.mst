@@ -28,6 +28,7 @@
 
 		{{^ results }}
 		<p>Your search for <em>{{ query }}</em> returned no results.</p>
+		<hr class="hidden-md hidden-lg"/>
 		{{/ results }}
 	</div>
 </div>
