@@ -1,6 +1,6 @@
 {
 	title: "{{ post.title  }}",
-	tags: "{{ post.tags | join: ',' }}",
+	tags: "{{ post.tags | join: ' , ' }}",
 	date: "{{ post.date | date: "%A, %-d %B %Y, %H:%M" }}",
 	excerpt: "{{ post.excerpt | strip_html  | strip_newlines | remove: '"' }}",
 	content: "{{ post.content | strip_html  | strip_newlines | remove: '"' }}",
