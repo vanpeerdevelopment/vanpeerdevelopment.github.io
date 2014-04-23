@@ -45,7 +45,18 @@ function search_engine(){
 
 	return {
 		search: function(query){
-			return index.search(query);
+			return index.search(query).map(function(search_result){
+				return posts
+					.filter(function(post){
+						return post.url === search_result.ref;
+					})
+					.map(function(post){
+						return {
+							title: post.title,
+							url: post.url
+						};
+					})[0];
+			});
 		}
 	};
 };
