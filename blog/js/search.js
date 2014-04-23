@@ -53,6 +53,9 @@ function search_engine(){
 					.map(function(post){
 						return {
 							title: post.title,
+							date: post.date,
+							tags: post.tags.split(","),
+							excerpt: post.excerpt,
 							url: post.url
 						};
 					})[0];
@@ -62,7 +65,27 @@ function search_engine(){
 };
 
 function search() {
-	var query = $("#search-input").val();
+	var get_search_query = function(){
+		return $("#search-input").val();
+	};
+
+	var clear_search_query = function(){
+		$("#search-input").val("");
+	 	$("#search-input").blur();
+	};
+
+	var load_search_page = function(query, results){
+		$.get("/blog/js/searchresult.mst", function(template){
+			var query_result = {
+				query: query, 
+				results: results
+			};
+			$("#content").html(Mustache.render(template, query_result));
+		});
+	};
+	
+	var query = get_search_query();
+	clear_search_query();
 	var results = search_engine().search(query);
-    alert(query + " (" + results.length + " results)");
+	load_search_page(query, results);	
 };

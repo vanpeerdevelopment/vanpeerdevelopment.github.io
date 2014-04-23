@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-md-12">
+		{{# results.length }}
+		<p>
+			Your search for <em>{{ query }}</em> returned {{ results.length }} result(s):
+			{{# results }}
+			<div class="row">
+				<div class="col-md-12">
+					<h3>
+						<a href="{{ url }}">{{ title }}</a>
+					</h3>
+					<p><i class="fa fa-calendar fa-fw"></i> {{ date }}</p>
+					<p><i class="fa fa-tags fa-fw"></i> Tags:
+						{{# tags }}
+						<a class="tag" href="/tags/{{ . }}">
+							<span class="label label-primary">{{ . }}</span>
+						</a>
+						{{/ tags }}
+					</p>
+					<p>{{ excerpt }}</p>
+					<p><a href="{{ url }}">Read more</a></p>
+					<hr/>
+				</div>
+			</div>
+			{{/ results }}	
+		</p>
+		{{/ results.length }}
+
+		{{^ results }}
+		<p>Your search for <em>{{ query }}</em> returned no results.</p>
+		{{/ results }}
+	</div>
+</div>
